@@ -1,0 +1,15 @@
+
+<?php
+// if (count($find) > 0) {
+    echo '<table id="myTable"><thead><th>NAME</th><th>CATEGORY</th><th>PRICE</th><th>STOCK</th><th>VIEW</th><th>ORDER</th></thead><tbody>';
+    foreach ($find as $f) {
+        echo '<tr><td>' . $f->name . '</td><td>' . $f->category . '</td><td>' . $f->price . '</td><td>' . $f->stock . '</td><td><form action="quickView" method="POST" ><button name="view" class="btn bg-primary" value="'.$f->_id.'" >Quick View</button></form></td><td><form action="productDetail" method="POST" ><button name="product" class="btn bg-primary" value="'.$f->_id.'" >Order</button></form></td></tr>';
+    }
+    echo '<tbody><table>';
+// }
+?>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
